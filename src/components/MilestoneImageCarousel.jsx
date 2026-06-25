@@ -7,11 +7,7 @@ export default function MilestoneImageCarousel({ items }) {
   const activeItem = items[activeIndex];
   const progress = items.length > 0 ? ((activeIndex + 0.5) / items.length) * 100 : 0;
 
-  function move(step) {
-    setActiveIndex((current) => (current + step + items.length) % items.length);
-  }
-
-  function selectMilestone(index) {
+  function showMilestone(index) {
     setActiveIndex(index);
     setPressedIndex(null);
 
@@ -24,11 +20,20 @@ export default function MilestoneImageCarousel({ items }) {
     });
   }
 
+  function move(step) {
+    const nextIndex = (activeIndex + step + items.length) % items.length;
+    showMilestone(nextIndex);
+  }
+
   return (
     <section className="milestone-carousel reveal">
-      <div className="milestone-visual">
+      <div className="milestone-visual" key={activeItem.id}>
         {activeItem.imageSrc ? (
-          <img src={activeItem.imageSrc} alt={activeItem.imageAlt ?? activeItem.title} />
+          <img
+            key={activeItem.imageSrc}
+            src={activeItem.imageSrc}
+            alt={activeItem.imageAlt ?? activeItem.title}
+          />
         ) : (
           <div className="milestone-image-placeholder">
             <span>{activeItem.period}</span>
@@ -69,7 +74,7 @@ export default function MilestoneImageCarousel({ items }) {
               .join(' ')}
             key={item.id}
             type="button"
-            onClick={() => selectMilestone(index)}
+            onClick={() => showMilestone(index)}
           >
             <span className="milestone-node" aria-hidden="true" />
             <span className="milestone-index">{String(index + 1).padStart(2, '0')}</span>
