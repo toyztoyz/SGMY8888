@@ -1,19 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function TeamDossierShowcase({ members }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeMember = members[activeIndex];
 
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % members.length);
-    }, 5000);
-
-    return () => window.clearInterval(timer);
-  }, [members.length]);
-
   function selectMember(index) {
     setActiveIndex(index);
+  }
+
+  function moveMember(step) {
+    setActiveIndex((current) => (current + step + members.length) % members.length);
   }
 
   return (
@@ -38,10 +34,19 @@ export default function TeamDossierShowcase({ members }) {
             ))}
           </div>
           <div className="team-carousel-controls" aria-label="Team dossier carousel">
-            <span>{`${String(activeIndex + 1).padStart(2, '0')} / ${String(members.length).padStart(
-              2,
-              '0',
-            )}`}</span>
+            <div className="team-carousel-actions">
+              <button type="button" onClick={() => moveMember(-1)} aria-label="Previous member">
+                <span aria-hidden="true">{'\u2190'}</span>
+                <span>{'\u4e0a\u4e00\u9801'}</span>
+              </button>
+              <span>{`${String(activeIndex + 1).padStart(2, '0')} / ${String(
+                members.length,
+              ).padStart(2, '0')}`}</span>
+              <button type="button" onClick={() => moveMember(1)} aria-label="Next member">
+                <span>{'\u4e0b\u4e00\u9801'}</span>
+                <span aria-hidden="true">{'\u2192'}</span>
+              </button>
+            </div>
             <div className="team-carousel-dots">
               {members.map((member, index) => (
                 <button

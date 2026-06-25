@@ -12,9 +12,6 @@ export default function Works() {
       <PageHero
         eyebrow="Works"
         title={'\u793e\u6703\u8ca2\u737b'}
-        description={
-          '\u4e0a\u65b9\u653e\u4e00\u90e8\u6a6b\u5411\u4e3b\u5f71\u7247\uff0c\u4e0b\u65b9\u4ee5\u8f2a\u64ad\u5448\u73fe\u516d\u90e8\u76f4\u5f0f\u5f71\u7247\uff0c\u5de6\u908a\u770b\u5f71\u7247\u3001\u53f3\u908a\u770b\u6458\u8981\u3002'
-        }
       />
 
       <section className="featured-video-section reveal">
