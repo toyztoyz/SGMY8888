@@ -22,12 +22,13 @@ export const teamDossiers = [
   },
   {
     id: 'team-03',
-    name: 'Gathering Light 成員',
-    role: '真正的改變，來自一群願意彼此照亮的人。',
+    name: '葉芊姿',
+    category: '介紹',
+    role: '社群小編',
     summary:
-      '傅知遠始終相信，一個人的力量有限，但一群擁有共同信念的人，可以讓善意持續擴散。\n\nGathering Light 不只是交流的平台，更是一個彼此陪伴、互相啟發的社群。每位成員都帶著不同的人生故事而來，也在這裡找到願意同行的人。',
-    imageSrc: '/images/team-gathering-light-members.png',
-    imageAlt: 'Gathering Light Logo，拾光漫語 Gathering Light 官方品牌 Logo',
-    traits: ['信任', '共好', '成長'],
+      '每一段文字、每一張圖片、每一次分享，都是 Gathering Light 與大家交流的一種方式。\n\n作為 Gathering Light 的社群小編，葉芊姿負責規劃品牌內容與社群經營，將理念轉化為容易理解、值得分享的故事，讓更多人在日常中感受到知識、陪伴與成長的力量。',
+    imageSrc: '/images/team-ye-qianzi.png',
+    imageAlt: '葉芊姿社群小編形象照，拾光漫語 Gathering Light 團隊成員',
+    traits: ['內容', '溫度', '創意'],
   },
 ];
