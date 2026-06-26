@@ -1,9 +1,9 @@
 export const siteMeta = {
-  title: '拾光慢語 Gathering Light',
+  title: '拾光漫語 Gathering Light',
   subtitle: '一段關於信念、時代與行動的紀錄',
   quote: '真正的光，來自願意承擔黑暗的人。',
   heroImage: '/images/home-hero-bg.png',
-  heroImageAlt: '灰色西裝人物傅知遠形象照，拾光慢語 Gathering Light 創辦人',
+  heroImageAlt: '灰色西裝人物傅知遠形象照，拾光漫語 Gathering Light 創辦人',
 };
 
 export const navItems = [

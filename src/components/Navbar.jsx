@@ -16,7 +16,7 @@ export default function Navbar({ activePage, onNavigate }) {
         type="button"
         onClick={() => handleNavigate('home')}
       >
-        <img src="/images/gathering-light-logo.png" alt="Gathering Light Logo，拾光慢語 Gathering Light 官方品牌 Logo" />
+        <img src="/images/gathering-light-logo.png" alt="Gathering Light Logo，拾光漫語 Gathering Light 官方品牌 Logo" />
         <span>{siteMeta.title}</span>
       </button>
       <button
